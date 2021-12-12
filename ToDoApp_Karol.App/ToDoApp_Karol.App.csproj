@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ToDoApp_Karol.Domain\ToDoApp_Karol.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace ToDoApp_Karol.Domain.Common
 {
-    public abstract class Person
+    public abstract class Persons
     {
         public string Name { get; set; }
         public int Age { get; set; }
-        public List<T> Duties { get; set; }
+        public List<Tasks> Duties { get; set; }
         //czemu nie moze byc List od T? bo to jest abstrakcyjna klasa a nie interfejs?
 
     }
