@@ -1,0 +1,59 @@
+﻿1) Jak rozwiązać to, że chcemy mieć jedną listę zadań różnych: gotowania (osobna klasa dziedzicząca po task - CookingTasks), sprzątania 
+(osobna klasa dziedzicząca po task - CleaningTasks), i zakupów (GroceriesTasks) ale w ramach jednej listy?
+2) Jak na poziomie interfejsu (jak zapytać użytkownika) i połączenia z bazą danych (jak to zamienić na odpowiednią kwerendę/metodę) sprawić żeby użytkownik mógł wybierać 
+rodzaj zadania, ale miał do niego te same metody (AddTask, DeleteTask itp) - czy jako że rodzaj zadania może być nadrzędny do metod, należy zrobić w interfejsie zawsze
+najpierw wybór rodzaju a potem metody, np.
+1. Wybierz rodzaj zadania
+-- Gotowanie
+2. Jaką akcję chcesz wykonać?
+Dodaj Item
+Usuń Item
+Update Item
+itp...
+
+Czy można też bardziej naturalnie zostać na poziomie wyboru zadania a rodzaj taska wpleść później? Np.
+
+1. Jaką akcję chcesz wykonać?
+Dodaj Item
+Usuń Item
+Update Item
+itp...
+
+--Dodaj Item
+2. Podaj nazwę, opis i rodzaj taska do dodania
+-- Spaghetti, Studenckie danie makaronowe, Gotowanie
+
+
+
+
+
+
+7) Przyjmowania inputu od użytkownika:
+Czy zawsze składnia prezentuje się tak?:
+
+Przykład A: Console.WriteLine("Podaj jakiś numer")
+var jakisNumer = Console.ReadLine().ToString();
+
+Czy Console.ReadLine dziala tez w jakiś inny sposob, np
+
+Przykład B: var jakisNumer = Console.ReadLine("Podaj jakiś numer") lub jakkolwiek inaczej niż w przykładzie A?
+
+8) Jak zrobić osobny TaskManager/Services dla nowych tasków - Cooking i Groceries? Zapewne Service musi być osobne, ale jak zainicjalizować różne services w tym samym TaskManagerze?
+Czy po prostu dodajemy nowe private readonly CookingTaskService cookingTaskService i inicjalizujemy go w konstruktorze i tak dla każdego Service'u który implementujemy?
+Czy da się zrobić jakiś generyczny taskService kiedy jeszcze nie wiemy od usera czy będzie to task gotowania/sprzątania/zakupów, tylko po prostu task? Np.
+Get Task ID spośród wszystkich rodzajów tasków -> wtedy czy trzeba robic
+
+var task = cleaningTaskServices.GetTask(ID)
+if (task ==null){ var task = cookingTaskServices.GetTask(ID)...} i tak dalej, czy jest jakiś sposób żeby móc wywołać na wspólnej liście
+
+taskServices.GetTask(ID) (nie wiedząc jaki ma typ)
+
+9) Przeanalizować nowe funkcje (na razie cleaning tasków: CHeckEstimatedCompletionTime, ShowPeople, AssignTask, AddPerson - 
+czy dobrze są przemyślane, co można by zmienić, jak usprawnić)
+
+Pytania 11/12/2021:
+
+10) Jak inicjalizować posczególne service'y jeśli mamy niektóre metody które implementują ogolny taskService (AddItem, Updateitem), a niektóre które będą implementować specyficzne zadania, typu ShowIngredients(cookingTaskid/cookingTaskTitle)
+
+11) Czy trzeba zrobić overload method dla każdego ShowTask jeśli chcemy pokazać specyficzne wartosci tego taska?
+jak to zrobic na poziomie Managera?

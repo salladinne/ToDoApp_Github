@@ -7,7 +7,7 @@ using ToDoApp_Karol.Domain.Common;
 
 namespace ToDoApp_Karol.Domain.Entity
 {
-    public class FamilyMember: Person
+    public class FamilyMember: Persons
     {
 
     }

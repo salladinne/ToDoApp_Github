@@ -1,7 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
-using ToDoApp_Karol.App.Managers;
-
+using ToDoApp.App.Managers;
 
 namespace ToDoApp_Karol
 {
